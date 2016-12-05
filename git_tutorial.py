@@ -5,7 +5,7 @@ import time
 
 exitFlag = 0
 
-class myThread (threading.Thread):
+class timerThread (threading.Thread):
     def __init__(self, threadID, name, counter):
         threading.Thread.__init__(self)
         self.threadID = threadID
@@ -13,24 +13,21 @@ class myThread (threading.Thread):
         self.counter = counter
     def run(self):
         print "Starting " + self.name
-        print_time(self.name, self.counter, 5)
+        start_timer(self.name, self.counter)
         print "Exiting " + self.name
 
-def print_time(threadName, delay, counter):
+def start_timer(threadName, counter):
     while counter:
         if exitFlag:
             threadName.exit()
-        time.sleep(delay)
-        print "%s: %s" % (threadName, time.ctime(time.time()))
+        time.sleep(1000)
         counter -= 1
 
 # Create new threads
-thread1 = myThread(1, "Thread-1", 1)
-thread2 = myThread(2, "Thread-2", 2)
+timer_5sn = timerThread(1, "timer 5 sn", 5)
 
 # Start new Threads
-thread1.start()
-thread2.start()
+timer_5sn.start()
 
 print "hello world"
 print "how are you"

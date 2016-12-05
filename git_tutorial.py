@@ -20,7 +20,7 @@ def start_timer(threadName, counter):
     while counter:
         if exitFlag:
             threadName.exit()
-        time.sleep(1000)
+        time.sleep(1)
         counter -= 1
 
 # Create new threads

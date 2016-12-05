@@ -33,3 +33,4 @@ thread1.start()
 thread2.start()
 
 print "hello world"
+print "how are you"

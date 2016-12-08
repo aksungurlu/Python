@@ -64,5 +64,4 @@ keystroke_h1 = keystrokeThread(2, "keystroke handler")
 timer_5sn.start()
 keystroke_h1.start()
 
-print "hello world"
-print "how are you"
+print "press q to quit"

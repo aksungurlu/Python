@@ -30,14 +30,16 @@ def rightMessage():
 	if direction < 1:
 		direction += 0.1
    
-def showMessage():
+def showMessage(event):
    tkMessageBox.showinfo( "Hello Python", "Speed:"+str(speed)+" Direction:"+str(direction))
 
 B_up = Tkinter.Button(top, text = u'\u25b2', command = upMessage).grid(row=1,column=2)
 B_left = Tkinter.Button(top, text = u'\u25c0', command = leftMessage).grid(row=2,column=1)
 B_down = Tkinter.Button(top, text = u'\u25bc', command = downMessage).grid(row=2,column=2)
 B_right = Tkinter.Button(top, text = u'\u25b6', command = rightMessage).grid(row=2,column=3)
-B_show = Tkinter.Button(top, text = "Show", command = showMessage).grid(row=4,column=2,rowspan=3)
+B_show = Tkinter.Button(top, text = "Show")
+B_show.grid(row=4,column=2,rowspan=3)
+B_show.bind("<Button-1>",showMessage)
 
 #B_up.pack()
 #B.place(bordermode=OUTSIDE, relheight=0.2, relwidth=0.5)
